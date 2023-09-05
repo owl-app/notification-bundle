@@ -44,6 +44,11 @@ final class NotificationType extends AbstractResourceType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'owl_notification'
+     */
     public function getBlockPrefix(): string
     {
         return 'owl_notification';
