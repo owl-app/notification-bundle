@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Owl\Bundle\NotificationBundle\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
-use Sylius\Bundle\MoneyBundle\Form\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -21,32 +20,30 @@ final class NotificationType extends AbstractResourceType
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'owl.form.common.description',
-                'attr' => array(
+                'attr' => [
                     'class' => 'tinymce',
-                    'data-theme' => 'advanced'
-                )
+                    'data-theme' => 'advanced',
+                ],
             ])
             ->add('dateIssue', DateType::class, [
                 'label' => 'owl.form.common.date_issue',
                 'widget' => 'single_text',
-                'placeholder' => ['year' => '-', 'month' => '-', 'day' => '-']
+                'placeholder' => ['year' => '-', 'month' => '-', 'day' => '-'],
             ])
             ->add('currentFrom', DateType::class, [
                 'label' => 'owl.form.notification.current_from',
                 'widget' => 'single_text',
-                'placeholder' => ['year' => '-', 'month' => '-', 'day' => '-']
+                'placeholder' => ['year' => '-', 'month' => '-', 'day' => '-'],
             ])
             ->add('currentTo', DateType::class, [
                 'label' => 'owl.form.notification.current_to',
                 'widget' => 'single_text',
-                'placeholder' => ['year' => '-', 'month' => '-', 'day' => '-']
+                'placeholder' => ['year' => '-', 'month' => '-', 'day' => '-'],
             ])
         ;
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'owl_notification'
      */
     public function getBlockPrefix(): string
